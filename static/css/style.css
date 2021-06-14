@@ -1,0 +1,21 @@
+h1 {
+    color: red;
+    padding-top: 20%;
+}
+.res{
+    padding-top:8%;
+    padding-bottom:8%;
+}
+.info{
+    margin-top:50px;
+}
+
+img{
+   width:550px;
+   height:300px;
+   margin-bottom:60px;
+}
+.logo{
+    width:200px;
+    height:100px;
+}
