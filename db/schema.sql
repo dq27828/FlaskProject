@@ -1,0 +1,41 @@
+DROP TABLE IF EXISTS PASSENGER;
+DROP TABLE IF EXISTS RESERVATION;
+DROP TABLE IF EXISTS PLANE;
+DROP TABLE IF EXISTS Passenger_to_Plane;
+
+
+CREATE TABLE Passenger(
+    PassengerID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    Street VARCHAR NOT NULL,
+    City TEXT NOT NULL,
+    State TEXT NOT NULL,
+    ZipCode INTEGER NOT NULL
+);
+
+CREATE TABLE Reservation(
+    ReservationID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Passenger_ID INTEGER NOT NULL,
+    DepartureCity TEXT NOT NULL,
+    ArrivalCity TEXT NOT NULL,
+    DepartureDate DATE NOT NULL,
+    ReturnDate DATE,
+    ReservationName TEXT NOT NULL,
+    ReservationLastName TEXT NOT NULL,
+    FOREIGN KEY (Passenger_ID) REFERENCES PASSENGER (PassengerID)
+);
+
+
+
+CREATE TABLE Plane(
+    PlaneID INTEGER PRIMARY KEY AUTOINCREMENT,
+    PlaneSeats INTEGER NOT NULL
+);
+
+
+CREATE TABLE Passenger_to_Plane(
+    Plane_ID INTEGER NOT NULL,
+    Passenger_ID INTEGER NOT NULL,
+    FOREIGN KEY (Passenger_ID) REFERENCES PASSENGER (PassengerID),
+    FOREIGN KEY (Plane_ID) REFERENCES PLANE (PlaneID)
+);
