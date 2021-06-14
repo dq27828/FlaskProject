@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Edit the reservation</h2>
+    <form method="post">
+        <div class="form-group">
+        <label for="Passenger_ID">Passenger_ID</label>
+        <input type="text" name="Passenger_ID" placeholder="Put Passenger_ID"
+                class="form-control"
+                value="{{ request.form['Passenger_ID'] or Reservation['Passenger_ID'] }}"/>
+        </div>
+        <div class="form-group">
+        <label for="DepartureCity">DepartureCity</label>
+        <input type="text" name="DepartureCity" placeholder="Put DepartureCity"
+                class="form-control"
+                value="{{ request.form['DepartureCity'] or Reservation['DepartureCity'] }}"/>
+        </div>
+        <div class="form-group">
+        <label for="ArrivalCity">ArrivalCity</label>
+        <input type="text" name="ArrivalCity" placeholder="Put ArrivalCity"
+                class="form-control"
+                value="{{ request.form['ArrivalCity'] or Reservation['ArrivalCity'] }}"/>
+        </div>
+        <div class="form-group">
+        <label for="DepartureDate">DepartureDate</label>
+        <input type="date" name="DepartureDate" placeholder="Post DepartureDate"
+                class="form-control"
+                value="{{ request.form['DepartureDate'] or Reservation['DepartureDate'] }}"/>
+        </div>
+        <div class="form-group">
+        <label for="ReturnDate">ReturnDate</label>
+        <input type="date" name="ReturnDate" placeholder="Put ReturnDate"
+                class="form-control"
+                value="{{ request.form['ReturnDate'] or Reservation['ReturnDate'] }}"/>
+        </div>
+        <div class="form-group">
+        <label for="ReservationName">ReservationName</label>
+        <input type="text" name="ReservationName" placeholder="Put ReservationName"
+                class="form-control"
+                value="{{ request.form['ReservationName'] or Reservation['ReservationName'] }}"/>
+        </div>
+        <div class="form-group">
+        <label for="ReservationLastName">ReservationLastName</label>
+        <input type="text" name="ReservationLastName" placeholder="Put ReservationLastName"
+                class="form-control"
+                value="{{ request.form['ReservationLastName'] or Reservation['ReservationLastName'] }}"/>
+        </div>
+
+
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+<hr>
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="w3-text-orange">{% block title %} Create a New Reservation {% endblock %}</h2>
+<form method="post">
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="Passenger_ID">Passenger ID</label>
+        <input class="w3-input w3-border w3-round w3-monospace " type="text" name="Passenger_ID" placeholder="Passenger ID" class="form-control"
+        value="{{ request.form['Passenger_ID'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="DepartureCity">Departure City</label>
+        <input class="w3-input w3-border w3-round w3-monospace" type="text" name="DepartureCity" placeholder="Departure City" class="form-control"
+        value="{{ request.form['DepartureCity'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="ArrivalCity">Arrival City</label>
+        <input class="w3-input w3-border w3-round w3-monospace" type="text" name="ArrivalCity" placeholder="Arrival City" class="form-control"
+        value="{{ request.form['ArrivalCity'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="DepartureDate">Departure Date</label>
+        <input class="w3-input w3-border w3-round  w3-monospace" type="date" name="DepartureDate" placeholder="Departure Date" class="form-control"
+        value="{{ request.form['DepartureDate'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="ReturnDate">Return Date</label>
+        <input class="w3-input w3-border w3-round w3-monospace" type="date" name="ReturnDate" placeholder="Return Date" class="form-control"
+        value="{{ request.form['ReturnDate'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="ReservationName">Name</label>
+        <input class="w3-input w3-border w3-round w3-monospace" type="text" name="ReservationName" placeholder="Name" class="form-control"
+        value="{{ request.form['ReservationName'] }}"></input>
+    </div>
+    <div class="form-group">
+        <label class="w3-text-teal w3-monospace" for="ReservationLastName">Last Name</label>
+        <input class="w3-input w3-border w3-round w3-monospace" type="text" name="ReservationLastName" placeholder="Last Name" class="form-control"
+        value="{{ request.form['Passenger_ID'] }}"></input>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

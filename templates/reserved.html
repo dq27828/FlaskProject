@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for Reservation in Reservation %}
+<div class="w3-half res">
+  <p class="w3-xxlarge w3-text-brown">{{Reservation['ReservationName']}}</p>
+  <div class="w3-container w3-center">
+
+    <p class="w3-monospace" style="font-size:20px;">Departure city|&nbsp;Arrival city</p>
+  <p class="badge w3-large w3-light-green">{{ Reservation['DepartureCity'] }}</p>
+&nbsp;&nbsp;
+  <p class="badge w3-large w3-orange ">{{ Reservation['ArrivalCity'] }}</p>
+    <br>
+    <a class="w3-button w3-teal w3-round" href="{{ url_for('reserve', reserve_id=Reservation['ReservationID']) }}">READ more</a>
+</div>
+</div>
+
+{% endfor %}
+{% endblock %}

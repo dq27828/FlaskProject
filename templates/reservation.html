@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="w3-container w3-center info">
+    <h3 class="w3-monospace">Name | {{ Reservation['ReservationName'] }}</h3>
+    <h3 class="w3-monospace"> Last Name | {{ Reservation['ReservationLastName'] }}</h3>
+    <h3 class="w3-monospace">Passenger ID | {{ Reservation['Passenger_ID'] }}</h3>
+    <h3 class="w3-monospace">Departure City | {{ Reservation['DepartureCity'] }}</h3>
+    <h3 class="w3-monospace">Arrival City | {{ Reservation['ArrivalCity'] }}</h3>
+    <h3 class="w3-monospace">Departure Date | {{ Reservation['DepartureDate'] }}</h3>
+    <h3 class="w3-monospace">Return Date | {{ Reservation['ReturnDate'] }}</h3>
+
+    <a href="{{ url_for('edit', ReservationID=Reservation['ReservationID']) }}">
+<span class=" w3-button w3-green">Edit</span>
+</a>
+<form action="{{ url_for('delete', ReservationID=Reservation['ReservationID']) }}" method="POST">
+    <input type="submit" value="Delete Reservation"
+           class="w3-button w3-red"
+           onclick="return confirm('Are you sure you want to delete this post?')">
+</form>
+
+</div>
+
+{% endblock %}
